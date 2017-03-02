@@ -1,14 +1,29 @@
 package E01DefiningClasses.E01CompanyRooster;
 
 public class Person {
+    private static final int DEFAULT_AGE = -1;
+
     private String name;
-    private double salary;
-    private String position;
-    private String department;
+    private int age;
 
+    public Person(){
+    }
 
+    public Person(String name){
+        this.name = name;
+        this.age = DEFAULT_AGE;
+    }
 
+    public Person(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
 
+    public String getName(){
+        return this.name;
+    }
 
-
+    public int getAge(){
+        return this.age;
+    }
 }

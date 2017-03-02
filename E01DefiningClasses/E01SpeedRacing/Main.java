@@ -4,13 +4,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         Integer n = Integer.valueOf(reader.readLine());
 
-        HashMap<String, Car> cars = new HashMap<>();
+        LinkedHashMap<String, Car> cars = new LinkedHashMap<>();
         for (int i = 0; i < n; i++) {
             String[] arguments = reader.readLine().split("\\s+");
             String model = arguments[0];
@@ -33,10 +34,7 @@ public class Main {
             }
         }
 
-        cars
-                .entrySet()
-                .stream()
-                .sorted((a,b) -> a.getKey().compareTo(b.getKey()))
+        cars.entrySet()
                 .forEach(a -> System.out.println(a.getValue()));
     }
 }

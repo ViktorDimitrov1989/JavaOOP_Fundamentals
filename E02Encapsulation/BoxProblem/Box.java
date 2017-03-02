@@ -1,4 +1,4 @@
-package E02Encapsulation;
+package E02Encapsulation.BoxProblem;
 
 public class Box {
     private double length;

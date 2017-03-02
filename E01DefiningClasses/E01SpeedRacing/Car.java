@@ -1,7 +1,7 @@
 package E01DefiningClasses.E01SpeedRacing;
 
 public class Car {
-    private static final double DEFAULT_TRAVELLED_DISTANCE = 0d;
+    private static final double DEFAULT_TRAVELLED_DISTANCE = 0.0;
 
     private String model;
     private double fuelAmount;

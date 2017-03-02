@@ -1,4 +1,4 @@
-package E02Encapsulation;
+package E02Encapsulation.BoxProblem;
 
 import java.io.BufferedReader;
 import java.io.IOException;

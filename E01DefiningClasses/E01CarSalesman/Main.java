@@ -3,9 +3,7 @@ package E01DefiningClasses.E01CarSalesman;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -13,10 +11,11 @@ public class Main {
         int engineCount = Integer.parseInt(reader.readLine());
 
 
-        HashMap<String, Engine> engines = new HashMap<>();
+        LinkedHashMap<String, Engine> engines = new LinkedHashMap<>();
         for (int i = 0; i < engineCount; i++) {
             String[] arguments = reader.readLine().split("\\s+");
             String model = arguments[0];
+
             Integer power = Integer.parseInt(arguments[1]);
             Integer displacement = null;
             String efficiency = null;
@@ -38,7 +37,7 @@ public class Main {
             else{
                 engine = new Engine(model,power);
             }
-            engines.put(model,engine);
+            engines.putIfAbsent(model,engine);
         }
 
 
@@ -70,12 +69,9 @@ public class Main {
             else{
                 car = new Car(model,engine);
             }
-            cars.put(model, car);
         }
 
-        for (Map.Entry<String, Car> car : cars.entrySet()) {
-            System.out.println(car.getValue());
-        }
-        String debug = "";
+        cars.entrySet()
+                .forEach(c -> System.out.println(c.getValue()));
     }
 }

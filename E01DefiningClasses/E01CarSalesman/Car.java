@@ -49,7 +49,7 @@ public class Car {
         return String.format("%s:%n  %s%n  Weight: %s%n  Color: %s",
                 this.model,
                 this.engine,
-                this.weight.toString().replaceAll("-1", "n/a"),
+                this.weight.toString().replace("-1", "n/a"),
                 this.color);
     }
 }
